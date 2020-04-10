@@ -9,6 +9,6 @@ $ cd auth-apis
 ```
 
 ```shell
-yarn
-yarn start-dev
+$ yarn
+$ yarn start-dev
 ```
