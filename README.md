@@ -12,3 +12,7 @@ $ cd auth-apis
 $ yarn
 $ yarn start-dev
 ```
+
+Default username and password: `user` and `password` respectively
+
+Postman collection: https://www.postman.com/collections/fb1543b0eca37aac7525
