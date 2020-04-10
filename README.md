@@ -12,7 +12,8 @@ $ cd auth-apis
 $ yarn
 $ yarn start-dev
 ```
+Api base url: http://localhost:3001/
 
-Default username and password: `user` and `password` respectively
+Default username and password: `user` and `password` for login endpoint
 
 Postman collection: https://www.postman.com/collections/fb1543b0eca37aac7525
