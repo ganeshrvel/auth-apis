@@ -57,8 +57,15 @@ app.post('/api/v1/users/login', function(req, res) {
   }
 
   res.status(201).send({
-    error_message: null,
-    token_id: createIdToken(user)
+    error: {
+      type: '',
+      message: 'error message',
+      code: 400
+    },
+    data: {
+      token_id: createIdToken(user)
+    },
+    success: true
   });
 });
 
@@ -76,10 +83,17 @@ app.get('/api/v1/users/getLogin', validateToken, function(req, res) {
   const { id, email, username } = user;
 
   return res.status(201).send({
-    error_message: null,
-    id,
-    email,
-    username
+    error: {
+      type: '',
+      message: 'error message',
+      code: 400
+    },
+    data: {
+      id,
+      email,
+      username
+    },
+    success: true
   });
 });
 
@@ -98,14 +112,16 @@ app.get('/api/v1/users/registerDevice', validateToken, function(req, res) {
 
   return res.status(201).send({
     error: {
-      error_message: null
+      type: '',
+      message: 'error message',
+      code: 400
     },
     data: {
       id,
       email,
       username
     },
-    message: 'Some message'
+    success: true
   });
 });
 
