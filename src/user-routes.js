@@ -83,6 +83,32 @@ app.get('/api/v1/users/getLogin', validateToken, function(req, res) {
   });
 });
 
+app.get('/api/v1/users/registerDevice', validateToken, function(req, res) {
+  const { decodedValue: tokenData } = decodeToken(req);
+
+  const user = _.find(users, tokenData.user);
+
+  if (!user) {
+    return res.status(401).send({
+      error_message: 'no user found with this token'
+    });
+  }
+
+  const { id, email, username } = user;
+
+  return res.status(201).send({
+    error: {
+      error_message: null
+    },
+    data: {
+      id,
+      email,
+      username
+    },
+    message: 'Some message'
+  });
+});
+
 app.get(
   '/api/v1/users/refreshToken',
   (req, res, next) => {
